@@ -26,5 +26,7 @@ jobs:
     - name: Uploading files to gh-pages branch
       uses: JamesIves/github-pages-deploy-action@v4
       with:
+        access_token: ${{ secrets.GH_DOCS }}
         branch: gh-pages
         folder: release/wwwroot
+        clean: true
