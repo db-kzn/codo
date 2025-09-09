@@ -32,6 +32,13 @@ jobs:
         run: |
           dotnet publish src/Host/Host.csproj --configuration Release --output temp_deploy
           
+      - name: Подготовка файлов для GitHub Pages
+        run: |
+          cp -r temp_deploy/wwwroot/_framework/* temp_deploy/wwwroot/
+          cp -r temp_deploy/wwwroot/_content/* temp_deploy/wwwroot/
+          rm -rf temp_deploy/wwwroot/_framework
+          rm -rf temp_deploy/wwwroot/_content
+          
       - name: Загрузка артефактов
         uses: actions/upload-pages-artifact@v3
         with:
