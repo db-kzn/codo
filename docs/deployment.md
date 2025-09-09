@@ -26,7 +26,8 @@
    ```
    dotnet publish src/Host/Host.csproj --configuration Release --output temp_deploy
    ```
-3. Собранные файлы из директории `temp_deploy/wwwroot` публикуются на GitHub Pages
+3. Дополнительно выполняется подготовка файлов - копирование содержимого директорий `_framework` и `_content` в корень `wwwroot`, после чего оригинальные директории удаляются
+4. Подготовленные файлы из директории `temp_deploy/wwwroot` публикуются на GitHub Pages
 
 ### Ручное развертывание
 
