@@ -1,0 +1,56 @@
+name: Развертывание на GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Получение кода
+        uses: actions/checkout@v4
+        
+      - name: Установка .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          
+      - name: Сборка проекта
+        run: |
+          dotnet publish Host --configuration Release --output temp_deploy
+          
+      - name: Подготовка файлов для развертывания
+        run: |
+          cp -r temp_deploy/wwwroot/_framework/* temp_deploy/wwwroot/
+          cp -r temp_deploy/wwwroot/_content/* temp_deploy/wwwroot/
+          rm -rf temp_deploy/wwwroot/_framework
+          rm -rf temp_deploy/wwwroot/_content
+          
+      - name: Загрузка артефактов
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: temp_deploy/wwwroot
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Развертывание на GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
