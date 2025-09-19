@@ -7,7 +7,7 @@ on:
   # Runs on pushes targeting the default branch for the app's folder path
   push:
     paths:
-      - main
+      - '**'
     branches:
       - main
 
@@ -45,7 +45,13 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Publish app
-        run: dotnet publish -c Release
+        run: dotnet publish codo.csproj -c Release
+
+      - name: Rewrite base href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
+        with:
+          html_path: ${{ env.PUBLISH_DIR }}/index.html
+          base_href: /{REPLACE_WITH_YOUR_REPOSITORY_NAME}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5.0.0
