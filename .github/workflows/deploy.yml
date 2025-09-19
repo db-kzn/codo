@@ -1,5 +1,5 @@
 ﻿# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Blazor Wasm to Pages
 env:
   PUBLISH_DIR: bin/Release/net9.0/publish/wwwroot
 
@@ -41,7 +41,7 @@ jobs:
         uses: na1307/blazor-github-pages@v3
         id: prepare
         with:
-          project-path: MyBlazorApp/MyBlazorApp.csproj
+          project-path: codo.csproj
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
