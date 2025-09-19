@@ -1,0 +1,23 @@
+{
+  "name": "_codo_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/db-kzn/codo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/db-kzn/codo/issues"
+  },
+  "homepage": "https://github.com/db-kzn/codo#readme",
+  "dependencies": {
+    "brotli-wasm": "^3.0.1"
+  }
+}
