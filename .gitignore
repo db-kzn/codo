@@ -1,0 +1,128 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+*.vs/
+
+.temp
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Chutzpah Test files
+_Chutzpah*
+
+# Visual C++ build cache
+ipch/
+
+# ReSharper coverage
+*.dotCover
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# Visual Studio Code
+.vscode/
+
+# Mac OS X
+.DS_Store
+
+# Azure Functions
+local.settings.json
+
+# Rider
+.idea/
+
+# OS generated files
+Thumbs.db
+
+# DotNetCore
+*.deps.json
+*.runtimeconfig.json
+
+# EF migrations
+**/Migrations/**
+
+# User specific files
+*.userprefs
+
+# SonarQube
+.sonarqube/
+
+# Aspire
+**/AppHost/**/*.cs
+!**/AppHost/**/Program.cs
+
+# Temporary files
+*.tmp
+*.temp
